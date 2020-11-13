@@ -1,0 +1,25 @@
+:root {
+  --my-black: #444;
+  --my-gray: #999;
+  --my-light-gray: #f4f4f4;
+  --my-blue: #417ef3;
+  --my-orange: #ed850c;
+}
+
+.my-background {
+  background-color: var(--my-light-gray);
+  padding: 30px 30px;
+  min-height: calc(100vh - 112px - 81px);
+}
+
+.add-accommodation-submit {
+  box-shadow: none;
+}
+
+.add-accommodation-submit:hover {
+  box-shadow: none;
+}
+
+.add-accommodation-input-label {
+  display: block;
+}

@@ -1,0 +1,100 @@
+:root {
+  --my-black: #444;
+  --my-gray: #999;
+  --my-light-gray: #f4f4f4;
+  --my-blue: #417ef3;
+  --my-orange: #ed850c;
+}
+
+.my-background {
+  background-color: var(--my-light-gray);
+  padding: 30px 30px;
+  min-height: calc(100vh - 112px - 81px);
+}
+
+.image-preview-container {
+  overflow: hidden;
+  width: 100%;
+  height: 300px;
+}
+
+.image-preview {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.accommodation-name {
+  font-size: 24px;
+  color: var(--my-orange);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.services-title {
+  font-size: 24px;
+  color: var(--my-blue);
+  text-align: center;
+}
+
+.service-icon-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.service-icon {
+  margin-right: 15px;
+  font-size: 30px;
+}
+
+.custom-gutter-1,
+.custom-gutter-2,
+.custom-gutter-3 {
+  padding: 0 !important;
+}
+
+.my-background .my-undertitle {
+  color: var(--my-black);
+}
+
+.booking-button {
+  justify-content: center;
+    display: flex;
+}
+
+@media (min-width: 992px) {
+  .custom-gutter-1 {
+    padding: 0 15px 0 0 !important;
+    box-sizing: border-box;
+  }
+  .custom-gutter-2 {
+    padding: 0 15px 0 15px !important;
+    box-sizing: border-box;
+  }
+  .custom-gutter-3 {
+    padding: 0 0 0 15px !important;
+    box-sizing: border-box;
+  }
+  .service-icon-list {
+    justify-content: left;
+  }
+  .service-icon {
+    font-size: 24px;
+  }
+  .accommodation-name {
+    font-size: 18px;
+    text-align: left;
+  }
+  .services-title {
+    font-size: 18px;
+    text-align: left;
+  }
+  .booking-button {
+      display: block;
+  }
+  .my-background {
+    padding: 30px 100px;
+  }
+}

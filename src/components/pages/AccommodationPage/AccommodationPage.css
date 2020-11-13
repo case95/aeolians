@@ -1,0 +1,58 @@
+:root {
+  --my-black: #444;
+  --my-gray: #999;
+  --my-light-gray: #f4f4f4;
+  --my-blue: #417ef3;
+  --my-orange: #ed850c;
+}
+
+.my-background {
+  background-color: var(--my-light-gray);
+  padding: 30px 30px;
+  min-height: calc(100vh - 112px - 81px);
+}
+
+.image-previewer {
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin: 0;
+}
+
+.image-previewer .image-preview-container {
+  max-height: 150px;
+}
+
+.image-previewer .image-preview-container .image-preview {
+  object-fit: cover;
+  object-position: center;
+}
+.section-title {
+  color: var(--my-orange);
+  font-size: 24px;
+}
+.services {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  list-style: none;
+}
+
+.booking-sites {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  list-style: none;
+}
+
+.booking-method {
+  height: 30px;
+}
+
+.booking-link {
+  height: 30px;
+  width: inherit;
+}
+
+.booking-icon {
+  height: 100%;
+}

@@ -1,0 +1,44 @@
+:root {
+  --my-black: #444;
+  --my-gray: #999;
+  --my-light-gray: #f4f4f4;
+  --my-blue: #417ef3;
+  --my-orange: #ed850c;
+}
+
+.my-hero-image {
+  background-image: url("/img/heroHome.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 30px 30px;
+  min-height: calc(100vh - 112px - 81px);
+}
+
+@media (min-width: 992px) {
+  .my-hero-image {
+    padding: 30px 100px;
+  }
+}
+
+
+.my-container .my-page-title .my-text{
+  text-align: left;
+}
+
+.my-container .my-container-link {
+  color: var(--my-orange);
+  display: inline;
+}
+
+.my-container .my-container-link-col {
+  text-align: center;
+}
+
+.my-container-link-col-1 {
+  border-right: var(--my-orange) solid 1px;
+}
+
+.my-container-link-col-2 {
+  border-left: var(--my-orange) solid 1px;
+}

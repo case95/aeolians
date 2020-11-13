@@ -1,0 +1,11 @@
+.App {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Reem Kufi", sans-serif;
+  font-size: 16px;
+  color: #444;
+}
+.my-content {
+  min-height: 100vh;
+}

@@ -1,0 +1,23 @@
+:root {
+  --myLightGrey: #f2f2f2;
+  --myDarkGrey: #666666;
+  --myBlue: #1b8fe2;
+}
+
+.myInput {
+  border-radius: 5px !important;
+  font-size: 18px !important;
+  line-height: 22px !important;
+  padding: 8px 15px !important;
+  box-sizing: border-box !important;
+}
+
+.myInputAppend {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+.myInputPrepend {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}

@@ -1,0 +1,56 @@
+:root {
+  --my-black: #444;
+  --my-gray: #999;
+  --my-light-gray: #f4f4f4;
+  --my-blue: #417ef3;
+  --my-orange: #ed850c;
+}
+
+.my-background {
+  background-color: var(--my-light-gray);
+  padding: 30px 30px;
+  min-height: calc(100vh - 112px - 81px);
+}
+
+.carousel-container {
+  width: 100%;
+}
+
+.carousel-image-container {
+  height: 600px;
+  width: 100%;
+}
+.carousel-image {
+  object-fit: cover !important;
+  object-position: center !important;
+  min-height: 600px;
+  width: 100%;
+}
+
+.carousel-band {
+  background-color: white;
+  opacity: 0.8;
+  position: absolute;
+  padding: 30px;
+  width: 100%;
+  bottom: 0;
+}
+
+.carousel-indicators li {
+  background-color: var(--my-blue) !important;
+}
+
+.carousel-caption {
+  color: var(--my-blue) !important;
+  bottom: 10px !important;
+  position: static !important;
+  padding: 0 !important;
+  font-size: 18px;
+}
+
+.contact-button,
+.contact-button:hover,
+.contact-button:focus {
+  color: white;
+  text-decoration: none;
+}

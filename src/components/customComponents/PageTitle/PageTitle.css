@@ -1,0 +1,31 @@
+:root {
+  --my-black: #444;
+  --my-gray: #999;
+  --my-light-gray: #f4f4f4;
+  --my-blue: #417ef3;
+  --my-orange: #ed850c;
+}
+
+.my-page-title{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.my-page-title .my-title{
+  color:var(--my-orange);
+  font-size: 36px;
+  margin:0
+}
+
+.my-page-title .my-undertitle{
+  color:#ffffff;
+  font-size: 24px;
+  margin:0
+}
+
+.my-page-title .my-text{
+  color:var(--my-black);
+  font-size: 18px;
+  margin:0
+}
