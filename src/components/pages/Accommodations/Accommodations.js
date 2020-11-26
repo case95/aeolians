@@ -4,15 +4,10 @@ import { Row, Col } from "react-bootstrap";
 
 import { Link } from "react-router-dom";
 
-import { useState, useEffect } from "react";
-
 //Import custom components
 import Container from "../../customComponents/Container/Container";
 import PageTitle from "../../customComponents/PageTitle/PageTitle";
 import Button from "../../customComponents/Button/Button";
-
-//To get data from db
-import AccommodationsServices from "../../../services/GetDataServices";
 
 import PropTypes from "prop-types";
 
@@ -21,33 +16,29 @@ import { compose } from "redux";
 import { withFirestore, useFirestoreConnect } from "react-redux-firebase";
 import { connect, useSelector } from "react-redux";
 
-// Fake data for testing
-import placeholderData from "../../../placeholderModel/placeholderModel";
-
 import "./Accommodations.css";
 
 const Accommodations = ({ accommodations }) => {
   //Database listener, it listens for the table we pass as an argumet. it also detects changes
-  useFirestoreConnect("accommodations");
+  useFirestoreConnect(["accommodations"]);
 
   const language = useSelector((state) => state.i18n.language);
 
-  const { error, setError } = useState("");
-
-  const listAccommodations = (arr) => {
-    console.log(accommodations);
+  const listAccommodations = () => {
     return (
       accommodations &&
-      accommodations.map((value) => {
+      accommodations.map((value, index) => {
         const { name, introduction, services, pictures, id } = value;
         return (
           <Container
+            key={index}
             styleNumber={1}
             child={
               <Row className="mx-0 accommodation">
                 <Col className="col-12 col-lg-4 custom-gutter-1 mb-3 mb-lg-0">
                   <div className="image-preview-container">
                     <img
+                      alt={name[`name${language} preview`]}
                       src={pictures && pictures[1]}
                       className="image-preview"
                     />
@@ -69,10 +60,10 @@ const Accommodations = ({ accommodations }) => {
                   </p>
                   {
                     <ul className="service-icon-list p-0">
-                      {services.icons.map((icon, index) => {
+                      {services.map((service, index) => {
                         return (
                           <li className="service-icon" key={index}>
-                            <i className={`fa ${icon}`}></i>
+                            <i className={`fa ${service.icon}`}></i>
                           </li>
                         );
                       })}

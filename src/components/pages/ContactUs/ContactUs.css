@@ -9,7 +9,7 @@
 .my-background {
   background-color: var(--my-light-gray);
   padding: 30px 30px;
-  min-height: calc(100vh - 112px - 81px);
+  min-height: calc(100vh - 128px - 81px);
 }
 
 .contact-link {

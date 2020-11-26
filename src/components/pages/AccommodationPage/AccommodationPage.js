@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from "react";
-
-import { useHistory } from "react-router-dom";
+import React from "react";
 
 //Redux imports
 import { compose } from "redux";
@@ -8,7 +6,7 @@ import { connect, useSelector } from "react-redux";
 import {
   withFirestore,
   useFirestoreConnect,
-  useFirestore,
+  // useFirestore,
 } from "react-redux-firebase";
 
 //bootstrap components
@@ -24,20 +22,12 @@ const AccommodationPage = (props) => {
   const language = useSelector((state) => state.i18n.language);
 
   const id = props.match.params.id;
-  const firestore = useFirestore();
-  const history = useHistory();
+  // const firestore = useFirestore();
 
   //LOOKING FOR A SPECIFIC DOCUMENT IN A COLLECTION, WE PASS THE COLLECTION AND THE DOC ID
-  useFirestoreConnect(
-    (props) => [{ collection: "accommodations", doc: id }],
-    connect((state, props) => ({
-      accommodations: state.firestore.data.accommodations,
-    }))
-  );
+  useFirestoreConnect([{ collection: "accommodations" }]);
 
   const { accommodations } = props;
-
-  accommodations && console.log("ACCOMMODATIONS", accommodations);
 
   const photoPreviewer = (acc) => {
     return (
@@ -45,11 +35,7 @@ const AccommodationPage = (props) => {
       acc.pictures.slice(0, 4).map((pic, index) => {
         return (
           <li className="image-preview-container" key={index}>
-            <img
-              src={pic}
-              alt={`image preview-${index}`}
-              className="image-preview"
-            />
+            <img src={pic} alt={`preview-${index}`} className="image-preview" />
           </li>
         );
       })
@@ -59,7 +45,7 @@ const AccommodationPage = (props) => {
   if (!accommodations) {
     return <p>There was a problem.</p>;
   } else {
-    const accommodation = accommodations[0];
+    const accommodation = accommodations.find((obj) => obj.id === id);
     return (
       <div className="my-background">
         <PageTitle title={accommodation.name[`name${language}`]}></PageTitle>
@@ -81,15 +67,15 @@ const AccommodationPage = (props) => {
                 </p>
                 <ul className="services p-0">
                   {accommodations &&
-                    accommodation.services[`services${language}`].map(
-                      (service, index) => {
-                        return (
-                          <li className="service" key={index}>
-                            {service}
-                          </li>
-                        );
-                      }
-                    )}
+                    accommodation.services.map((service, index) => {
+                      return (
+                        <li className="service" key={index}>
+                          {language === "_eng"
+                            ? service.service_eng
+                            : service.service_ita}
+                        </li>
+                      );
+                    })}
                 </ul>
                 <p className="section-title m-0">
                   {language === "_eng" ? "BOOK ON" : "PRENOTA CON"}
@@ -100,12 +86,12 @@ const AccommodationPage = (props) => {
                       return (
                         <li key={index} className="booking-method">
                           <a
-                            href={booking.link}
+                            href={`http://${booking.link}`}
                             target="_blank"
                             className="booking-link"
                           >
                             <img
-                              src={booking.icon}
+                              src={booking.logo}
                               alt={`booking method ${index}`}
                               className="booking-icon"
                             />

@@ -10,7 +10,6 @@
   border-top: var(--my-gray) solid 1px;
   padding: 15px 30px !important;
   margin: 0 !important;
-  max-height: 135px;
 }
 
 .my-footer-col-1,
@@ -95,4 +94,18 @@
   margin: 0 auto;
   display: flex;
   justify-content: center;
+}
+
+.bottom-bar {
+  border-top: 1px var(--my-blue) solid;
+}
+
+.login-link {
+  color: #ccc;
+
+  transition: color 0.3s ease-in-out;
+}
+
+.login-link:hover {
+  color: var(--my-gray);
 }

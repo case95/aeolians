@@ -4,8 +4,6 @@ import { Row, Col } from "react-bootstrap";
 
 import { Link } from "react-router-dom";
 
-import { useState, useEffect } from "react";
-
 //Import custom components
 import Container from "../../customComponents/Container/Container";
 import PageTitle from "../../customComponents/PageTitle/PageTitle";
@@ -18,12 +16,9 @@ import { compose } from "redux";
 import { withFirestore, useFirestoreConnect } from "react-redux-firebase";
 import { connect, useSelector } from "react-redux";
 
-// Fake data for testing
-import placeholderData from "../../../placeholderModel/placeholderModel";
+import "./ManageAccommodations.css";
 
-import "./EditAccommodations.css";
-
-const EditAccommodations = ({ accommodations }) => {
+const ManageAccommodations = ({ accommodations }) => {
   //Database listener, it listens for the table we pass as an argumet. it also detects changes
   useFirestoreConnect("accommodations");
 
@@ -44,7 +39,7 @@ const EditAccommodations = ({ accommodations }) => {
           <div className="image-preview-container mx-1" key={index}>
             <img
               src={pics && pic}
-              alt={`image preview-${index}`}
+              alt={`preview-${index}`}
               className="image-preview"
             />
           </div>
@@ -56,10 +51,11 @@ const EditAccommodations = ({ accommodations }) => {
   const listAccommodations = (arr) => {
     return (
       accommodations &&
-      accommodations.map((value) => {
-        const { name, introduction, services, pictures, id } = value;
+      accommodations.map((value, index) => {
+        const { name, pictures, id } = value;
         return (
           <Container
+            key={index}
             styleNumber={1}
             child={
               <Fragment>
@@ -69,29 +65,21 @@ const EditAccommodations = ({ accommodations }) => {
                       {name[`name${language}`]}
                     </p>
 
-                    <div className="d-flex image-previews-edit">{photoPreviewer(pictures)}</div>
+                    <div className="d-flex image-previews-edit">
+                      {photoPreviewer(pictures)}
+                    </div>
                   </Col>
 
-                  <Col className="col-12 col-lg-6 d-flex justify-content-center my-auto">
-                    <div className=" d-inline mx-auto">
-                      <Link to={`/editaccommodation/${id}`}>
-                        <Button
-                          child={
-                            language === "_eng"
-                              ? "Edit informations"
-                              : "Modifica informazioni"
-                          }
-                        />
-                      </Link>
+                  <Col className="col-12 col-lg-6 my-auto text-center text-lg-left">
+                    <Link to={`/editaccommodation/${id}`}>
                       <Button
-                        className="bg-danger mt-3"
                         child={
                           language === "_eng"
-                            ? "Delete accommodation"
-                            : "Elimina alloggio"
+                            ? "Edit informations"
+                            : "Modifica informazioni"
                         }
-                      ></Button>
-                    </div>
+                      />
+                    </Link>
                   </Col>
                 </Row>
               </Fragment>
@@ -135,7 +123,7 @@ const EditAccommodations = ({ accommodations }) => {
   );
 };
 
-EditAccommodations.propTypes = {
+ManageAccommodations.propTypes = {
   firestore: PropTypes.object.isRequired,
   accommodations: PropTypes.array,
 };
@@ -147,4 +135,4 @@ const enhance = compose(
   }))
 );
 
-export default enhance(EditAccommodations);
+export default enhance(ManageAccommodations);

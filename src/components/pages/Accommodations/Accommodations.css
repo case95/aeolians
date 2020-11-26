@@ -9,7 +9,7 @@
 .my-background {
   background-color: var(--my-light-gray);
   padding: 30px 30px;
-  min-height: calc(100vh - 112px - 81px);
+  min-height: calc(100vh - 128px - 81px);
 }
 
 .image-preview-container {
@@ -61,7 +61,7 @@
 
 .booking-button {
   justify-content: center;
-    display: flex;
+  display: flex;
 }
 
 @media (min-width: 992px) {
@@ -92,7 +92,7 @@
     text-align: left;
   }
   .booking-button {
-      display: block;
+    display: block;
   }
   .my-background {
     padding: 30px 100px;

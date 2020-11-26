@@ -8,10 +8,15 @@ import RentalServices from "./components/pages/RentalServices/RentalServices";
 import DailyTours from "./components/pages/DailyTours/DailyTours";
 import ContactUs from "./components/pages/ContactUs/ContactUs";
 import AccommodationPage from "./components/pages/AccommodationPage/AccommodationPage";
+import EditAccommodation from "./components/pages/EditAccommodation/EditAccommodation";
 import NotFound from "./components/pages/NotFound/NotFound";
+import Login from "./components/pages/Login/Login";
+
+//Private Route
+import PrivateRoute from "./components/PrivateRoute";
 
 //Admin pages
-import EditAccommodations from "./components/pages/EditAccommodations/EditAccommodations";
+import ManageAccommodations from "./components/pages/ManageAccommodations/ManageAccommodations";
 import AddAccommodation from "./components/pages/AddAccommodation/AddAccommodation";
 
 //Custom components
@@ -42,23 +47,29 @@ function App() {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/accommodations" component={Accommodations} />
-              <Route exact path="/rentals" component={RentalServices} />
-              <Route exact path="/tours" component={DailyTours} />
-              <Route exact path="/contacts" component={ContactUs} />
-              <Route
-                exact
-                path="/editaccommodations"
-                component={EditAccommodations}
-              />
-              <Route
-                exact
-                path="/addaccommodation"
-                component={AddAccommodation}
-              />
               <Route
                 exact
                 path="/accommodations/:id"
                 component={AccommodationPage}
+              />
+              <Route exact path="/rentals" component={RentalServices} />
+              <Route exact path="/tours" component={DailyTours} />
+              <Route exact path="/contacts" component={ContactUs} />
+              <Route exact path="/aeolians_admin" component={Login} />
+              <PrivateRoute
+                exact
+                path="/manageaccommodations"
+                component={ManageAccommodations}
+              />
+              <PrivateRoute
+                exact
+                path="/addaccommodation"
+                component={AddAccommodation}
+              />
+              <PrivateRoute
+                exact
+                path="/editaccommodation/:id"
+                component={EditAccommodation}
               />
               <Route component={NotFound} />
             </Switch>

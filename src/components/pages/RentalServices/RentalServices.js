@@ -12,10 +12,6 @@ import placeholderData from "../../../placeholderModel/placeholderModel";
 import "./RentalServices.css";
 
 const RentalServices = () => {
-  const rentalServices = () => {
-    return placeholderData.rentalServices;
-  };
-
   const listSlides = () => {
     return (
       placeholderData &&

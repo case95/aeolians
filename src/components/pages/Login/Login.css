@@ -1,0 +1,22 @@
+:root {
+  --my-black: #444;
+  --my-gray: #999;
+  --my-light-gray: #f4f4f4;
+  --my-blue: #417ef3;
+  --my-orange: #ed850c;
+}
+
+.my-login-hero-image {
+  background-image: url("/img/heroLogin.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 30px 30px;
+  min-height: calc(100vh - 128px - 81px);
+}
+
+@media (min-width: 992px) {
+  .my-login-hero-image {
+    padding: 30px 100px;
+  }
+}
