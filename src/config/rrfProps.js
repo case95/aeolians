@@ -1,7 +1,7 @@
 // React-redux-firebase props
 // This is used in our firebase provider
 import { createFirestoreInstance } from "redux-firestore";
-import firebase from "./db";
+import { firebaseApp as firebase } from "./db";
 import rrfConfig from "./rrfConfig";
 import store from "../store";
 

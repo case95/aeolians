@@ -1,6 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
+import "firebase/storage";
 
 // Your web app's Firebase configuration
 const dbaseConfig = {
@@ -8,7 +9,8 @@ const dbaseConfig = {
   authDomain: process.env.REACT_APP_DOMAIN,
   databaseURL: process.env.REACT_APP_DATABASE,
   projectId: process.env.REACT_APP_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  storageBucket:
+    "aeolians-86d4b.appspot.com" /*process.env.REACT_APP_STORAGE_BUCKET*/,
   messagingSenderId: process.env.REACT_APP_SENDER_ID,
   appId: process.env.REACT_APP_APP_ID,
 };
@@ -17,4 +19,6 @@ const firebaseApp = firebase.initializeApp(dbaseConfig);
 // Intialize Firestore
 firebaseApp.firestore();
 
-export default firebaseApp;
+const firebaseStorage = firebase.storage();
+
+export { firebaseApp, firebaseStorage };

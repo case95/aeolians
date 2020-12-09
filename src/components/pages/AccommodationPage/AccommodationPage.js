@@ -15,6 +15,7 @@ import { Col, Row } from "react-bootstrap";
 //Custom components
 import PageTitle from "../../customComponents/PageTitle/PageTitle";
 import Container from "../../customComponents/Container/Container";
+import Lightbox from "../../customComponents/Lightbox/Lightbox";
 
 import "./AccommodationPage.css";
 
@@ -31,14 +32,20 @@ const AccommodationPage = (props) => {
 
   const photoPreviewer = (acc) => {
     return (
-      accommodations &&
-      acc.pictures.slice(0, 4).map((pic, index) => {
-        return (
-          <li className="image-preview-container" key={index}>
-            <img src={pic} alt={`preview-${index}`} className="image-preview" />
-          </li>
-        );
-      })
+      <ul className="image-previewer">
+        {accommodations &&
+          acc.pictures.slice(0, 4).map((pic, index) => {
+            return (
+              <li className="image-preview-container-box" key={index}>
+                <img
+                  src={pic}
+                  alt={`preview-${index}`}
+                  className="image-preview"
+                />
+              </li>
+            );
+          })}
+      </ul>
     );
   };
 
@@ -54,9 +61,11 @@ const AccommodationPage = (props) => {
           child={
             <Row>
               <Col className="col-12 col-lg-6 mb-3 mb-lg-0">
-                <ul className="image-previewer">
-                  {photoPreviewer(accommodation)}
-                </ul>
+                <Lightbox
+                  activate={photoPreviewer(accommodation)}
+                  accommodationDetails={accommodation}
+                  language={language}
+                />
               </Col>
               <Col className="col-12 col-lg-6">
                 <p className="description ">

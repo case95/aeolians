@@ -27,3 +27,17 @@
 .add-remove-button {
   max-width: none !important;
 }
+
+.logo-checkbox {
+  width: 40px !important;
+  height: 40px !important;
+  position: absolute !important;
+}
+
+.logo-checkbox:focus {
+  box-shadow: none !important;
+}
+
+.add-accommodation-form .h1 {
+  color: var(--my-orange);
+}

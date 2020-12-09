@@ -11,6 +11,7 @@ import AccommodationPage from "./components/pages/AccommodationPage/Accommodatio
 import EditAccommodation from "./components/pages/EditAccommodation/EditAccommodation";
 import NotFound from "./components/pages/NotFound/NotFound";
 import Login from "./components/pages/Login/Login";
+import NewsletterPage from "./components/pages/NewsletterPage/NewsletterPage";
 
 //Private Route
 import PrivateRoute from "./components/PrivateRoute";
@@ -70,6 +71,11 @@ function App() {
                 exact
                 path="/editaccommodation/:id"
                 component={EditAccommodation}
+              />
+              <PrivateRoute
+                exact
+                path="/newsletter"
+                component={NewsletterPage}
               />
               <Route component={NotFound} />
             </Switch>

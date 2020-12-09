@@ -91,6 +91,7 @@ const Login = ({ firebase }) => {
                       label={`Email`}
                       onChange={(e) => onChange(e)}
                       type="email"
+                      id="email"
                     ></Input>
                   </Col>
                 </Row>
@@ -108,6 +109,7 @@ const Login = ({ firebase }) => {
                       label={`Password`}
                       onChange={(e) => onChange(e)}
                       type="password"
+                      id="password"
                     ></Input>
                   </Col>
                 </Row>

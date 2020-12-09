@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { Row, Col, InputGroup, Form } from "react-bootstrap";
 
 //custom components
@@ -19,15 +19,40 @@ import { Link } from "react-router-dom";
 
 import "./Footer.css";
 
-const onChange = (e) => {
-  return;
-};
-
 const Footer = ({ logo, emails }) => {
   //Database listener, it listens for the table we pass as an argumet. it also detects changes
   useFirestoreConnect("emails");
 
   const language = useSelector((state) => state.i18n.language);
+
+  const firestore = useFirestore();
+
+  const [userEmail, setUserEmail] = useState({ email: "" });
+
+  const [success, setSuccess] = useState("");
+
+  const [error, setError] = useState("");
+
+  const onChange = (e) => {
+    setUserEmail({ email: e.target.value });
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    firestore
+      .collection("emails")
+      .doc(`${userEmail.email}`)
+      .set(userEmail)
+      .then(() => {
+        setError("");
+        setSuccess("You have succesfully Subscribed!");
+      })
+      .catch((err) => {
+        setSuccess("");
+        setError("There was an error in the Subscription.");
+        console.log("ERROR:", err);
+      });
+  };
 
   return (
     <Fragment>
@@ -89,20 +114,29 @@ const Footer = ({ logo, emails }) => {
               ? `Subscribe to the Newsletter!`
               : `Iscriviti alla Newsletter!`}
           </p>
-          <Form className="newsletter-form">
+          <Form className="newsletter-form" onSubmit={(e) => onSubmit(e)}>
             <Input
-              className={"newsletter-input"}
+              className="newsletter-input"
               prepend={true}
               required={true}
               spacer={false}
+              value={userEmail.email}
               onChange={(e) => onChange(e)}
+              type="email"
+              id="subscribe"
               child={
                 <InputGroup.Append>
-                  <Button append={true} className="newsletter-button"></Button>
+                  <Button
+                    type="submit"
+                    append={true}
+                    className="newsletter-button"
+                  ></Button>
                 </InputGroup.Append>
               }
             ></Input>
           </Form>
+          {success && <p className="text-success text-center">{success}</p>}
+          {error && <p className="text-danger text-center">{error}</p>}
         </Col>
       </Row>
       <Row className="mx-0">

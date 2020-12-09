@@ -99,7 +99,7 @@ const Header = ({ accommodations, firebase, auth }, logo) => {
             to="/accommodations"
             className="my-nav-link"
           >
-            {language === "_eng" ? `All Accomodations` : `Tutti gli Alloggi`}
+            {language === "_eng" ? `Accomodations` : `Tutti gli Alloggi`}
           </NavDropdown.Item>
           {Array.isArray(navAccommodations) && navAccommodations.length > 1 ? (
             dropdownItems()
@@ -117,7 +117,7 @@ const Header = ({ accommodations, firebase, auth }, logo) => {
         {/*ACCOMMODATIONS DROPDOWN LG*/}
         <div className="my-nav-dropdown d-none d-lg-block">
           <Nav.Link as={Link} to="/accommodations" className="my-nav-link">
-            {language === "_eng" ? `All Accomodations` : `Tutti gli Alloggi`}{" "}
+            {language === "_eng" ? `Accomodations` : `Tutti gli Alloggi`}{" "}
             <i className="fa fa-sort-down"></i>
           </Nav.Link>
 
@@ -204,7 +204,11 @@ const Header = ({ accommodations, firebase, auth }, logo) => {
     return (
       <Fragment>
         <Nav.Link as={Link} to="/manageaccommodations" className="my-nav-link">
-          Admin Panel
+          Accommodations
+        </Nav.Link>
+
+        <Nav.Link as={Link} to="/newsletter" className="my-nav-link">
+          Subscribers
         </Nav.Link>
 
         {/*LANGUAGE DROPDOWN SM/MD*/}
@@ -256,7 +260,11 @@ const Header = ({ accommodations, firebase, auth }, logo) => {
           </div>
         </div>
 
-        <Nav.Link as={Button} className="my-nav-link" onClick={() => logout()}>
+        <Nav.Link
+          as={Button}
+          className="my-nav-link text-white"
+          onClick={() => logout()}
+        >
           Log Out
         </Nav.Link>
       </Fragment>
@@ -265,16 +273,20 @@ const Header = ({ accommodations, firebase, auth }, logo) => {
 
   return (
     <div>
-      <Navbar bg="white" expand="lg" className="my-navbar">
-        <Navbar.Brand>
-          <Link to="/" className="navbar-brand my-nav-logo d-md-none">
-            PICCOLO
+      <Navbar
+        bg="white"
+        expand="lg"
+        className="my-navbar py-2 flex-column flex-sm-row "
+      >
+        <Navbar.Brand className=" p-0 m-0">
+          <Link to="/" className="navbar-brand p-0 m-0 my-nav-logo d-sm-none">
+            <div className="logo-small"></div>
           </Link>
           <Link
             to="/"
-            className="navbar-brand my-nav-logo-md d-none d-md-block"
+            className="navbar-brand p-0 my-nav-logo-md d-none d-sm-block"
           >
-            MEDI0
+            <div className="logo"></div>
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

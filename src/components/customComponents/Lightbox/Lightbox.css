@@ -1,0 +1,62 @@
+:root {
+  --my-black: #444;
+  --my-gray: #999;
+  --my-light-gray: #f4f4f4;
+  --my-blue: #417ef3;
+  --my-orange: #ed850c;
+}
+
+.activate-lightbox {
+  height: 100%;
+}
+
+.activate-lightbox::after {
+  background-color: lightcoral;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.modal-dialog {
+  margin: 15px auto !important;
+  padding: 0 16px;
+}
+
+.modal-content {
+  height: calc(100vh - 30px);
+}
+
+.modal-body {
+  height: calc(100vh - 30px - 71px);
+}
+
+.modal-carousel-container {
+  width: 100%;
+  height: calc(100vh - 30px - 71px - 32px);
+}
+
+.modal-carousel-inner {
+  height: calc(100vh - 30px - 71px - 32px);
+}
+
+.modal-carousel-image-container {
+  width: 100%;
+  height: calc(100vh - 30px - 71px - 32px);
+}
+
+.modal-carousel-image {
+  object-fit: cover !important;
+  object-position: center !important;
+  width: 100%;
+  min-height: calc(100vh - 30px - 71px - 32px);
+  height: 100%;
+}
+
+.carousel-indicators li {
+  background-color: var(--my-blue) !important;
+}
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 900px !important;
+  }
+}

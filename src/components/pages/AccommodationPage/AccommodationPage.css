@@ -18,10 +18,18 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
   margin: 0;
+  height: 100%;
 }
 
-.image-previewer .image-preview-container {
-  max-height: 150px;
+.image-previewer .image-preview-container-box {
+  overflow: hidden;
+  max-height: 200px;
+}
+
+@media (min-width: 992px) {
+  .image-previewer .image-preview-container-box {
+    max-height: 100%;
+  }
 }
 
 .image-previewer .image-preview-container .image-preview {
