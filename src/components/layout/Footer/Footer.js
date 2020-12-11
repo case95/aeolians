@@ -136,7 +136,8 @@ const Footer = ({ logo, emails }) => {
                     type="submit"
                     append={true}
                     className="newsletter-button"
-                  ></Button>
+                    child={language === "_eng" ? `Submit` : `Invia`}
+                  />
                 </InputGroup.Append>
               }
             ></Input>
@@ -152,7 +153,7 @@ const Footer = ({ logo, emails }) => {
       <Row className="mx-0">
         <Col className="col-12 text-center bottom-bar">
           <Link as={Link} to="/aeolians_admin" className="login-link">
-            {language === "_eng" ? `Admin Log-in` : `ADMIN LOGIN`}
+            Admin Log-in
           </Link>
         </Col>
       </Row>

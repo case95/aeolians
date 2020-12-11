@@ -16,15 +16,35 @@
   width: 100%;
 }
 
+.carousel-inner {
+  height: 400px;
+}
 .carousel-image-container {
-  height: 600px;
+  height: 400px;
   width: 100%;
 }
 .carousel-image {
   object-fit: cover !important;
   object-position: center !important;
-  min-height: 600px;
+  min-height: 400px;
   width: 100%;
+}
+
+@media (min-width: 768px) {
+  .carousel-inner {
+    height: auto;
+  }
+
+  .carousel-image-container {
+    height: 600px;
+    width: 100%;
+  }
+  .carousel-image {
+    object-fit: cover !important;
+    object-position: center !important;
+    min-height: 600px;
+    width: 100%;
+  }
 }
 
 .carousel-band {

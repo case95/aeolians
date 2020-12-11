@@ -3,7 +3,7 @@ import { Row, Col, Carousel } from "react-bootstrap";
 
 //Redux imports
 import { compose } from "redux";
-import { connect } from "react-redux";
+import { connect, useSelector } from "react-redux";
 import { withFirestore, useFirestoreConnect } from "react-redux-firebase";
 
 //importing custom components
@@ -14,6 +14,8 @@ import Container from "../../customComponents/Container/Container";
 import "./RentalServices.css";
 
 const RentalServices = (props) => {
+  const language = useSelector((state) => state.i18n.language);
+
   const { slides } = props;
 
   useFirestoreConnect([{ collection: "rental_services" }]);
@@ -31,8 +33,7 @@ const RentalServices = (props) => {
             />
             <div className="carousel-band">
               <Carousel.Caption>
-                {/*<h3>First slide label</h3>*/}
-                <p>{slide.description}</p>
+                <p>{slide.description[`description${language}`]}</p>
               </Carousel.Caption>
             </div>
           </Carousel.Item>
@@ -47,9 +48,13 @@ const RentalServices = (props) => {
       <div className="my-background">
         <Row className="mx-0">
           <PageTitle
-            title={"RENTAL SERVICES"}
+            title={
+              language === "_eng" ? "RENTAL SERVICES" : "SERVIZI DI AFFITTO"
+            }
             undertitle={
-              "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt "
+              language === "_eng"
+                ? "English Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt "
+                : "Italiano Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt "
             }
           ></PageTitle>
         </Row>
@@ -62,30 +67,35 @@ const RentalServices = (props) => {
           ></Container>
         </Row>
         <Row className="mx-0">
-          <Col className="col-12 col-md-8 col-lg-10 px-0 pr-lg-3">
+          <Col className="col-12 px-0 pr-lg-3">
             <p>
-              We renting lovely boat to our guest for experience and discovery
-              the wonderful Aeolians Island and the north coast of Sicily,daily
-              trip to Vulcano e Lipari and on request to other islands. From the
-              new and beautiful Capo d’Orlando Marina, only takes 40 minutes to
-              get in Vulcano o Lipari.
+              {language === "_eng"
+                ? "We renting lovely boat to our guest for experience and discovery  the wonderful Aeolians Island and the north coast of Sicily,daily trip to Vulcano e Lipari and on request to other islands. From the new and beautiful Capo d’Orlando Marina, only takes 40 minutes to get in Vulcano o Lipari."
+                : "IN ITALIANO:We renting lovely boat to our guest for experience and discovery  the wonderful Aeolians Island and the north coast of Sicily,daily trip to Vulcano e Lipari and on request to other islands. From the new and beautiful Capo d’Orlando Marina, only takes 40 minutes to get in Vulcano o Lipari."}
             </p>
           </Col>
-          <Col className="col-12 col-md-4 col-lg-2 px-0">
+        </Row>
+        <Row>
+          <Col className="col-12 px-0 flex-column flex-md-row d-flex justify-content-center">
             <Button
               child={
-                <a href="tel:0402112221" className="contact-button">
-                  <i className="fas fa-phone"></i> 0402112221
+                <a href="tel:00393801761005" className="contact-button">
+                  <i className="fas fa-phone"></i> 0039 380 176 1005
                 </a>
               }
-              className="mb-3"
+              className="mb-3 mx-auto mx-md-3 my-md-0"
             />
             <Button
               child={
-                <a href="mailto:hello@aeolians.com" className="contact-button">
-                  <i className="far fa-envelope"></i> hello@aeolians.com
+                <a
+                  href="mailto:aeoliansholidayapartments@outlook.com"
+                  className="contact-button"
+                >
+                  <i className="far fa-envelope"></i>{" "}
+                  aeoliansholidayapartments@outlook.com
                 </a>
               }
+              className="my-0 mx-auto mx-md-3 my-md-0"
             />
           </Col>
         </Row>

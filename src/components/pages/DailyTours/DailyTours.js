@@ -8,12 +8,14 @@ import Container from "../../customComponents/Container/Container";
 
 //Redux imports
 import { compose } from "redux";
-import { connect } from "react-redux";
+import { connect, useSelector } from "react-redux";
 import { withFirestore, useFirestoreConnect } from "react-redux-firebase";
 
 import "./DailyTours.css";
 
 const DailyTours = (props) => {
+  const language = useSelector((state) => state.i18n.language);
+
   const { slides } = props;
 
   useFirestoreConnect([{ collection: "daily_tours" }]);
@@ -30,7 +32,7 @@ const DailyTours = (props) => {
           <div className="carousel-band">
             <Carousel.Caption>
               {/*<h3>First slide label</h3>*/}
-              <p>{slide.description}</p>
+              <p>{slide.description[`description${language}`]}</p>
             </Carousel.Caption>
           </div>
         </Carousel.Item>
@@ -44,9 +46,11 @@ const DailyTours = (props) => {
       <div className="my-background">
         <Row className="mx-0">
           <PageTitle
-            title={"DAILY TOURS"}
+            title={language === "_eng" ? "DAILY TOURS" : "TOUR ORGANIZZATI"}
             undertitle={
-              "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt "
+              language === "_eng"
+                ? "English Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt "
+                : "Italiano Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt "
             }
           ></PageTitle>
         </Row>
@@ -61,8 +65,9 @@ const DailyTours = (props) => {
         <Row className="mx-0">
           <Col className="col-12 px-0 pr-lg-3">
             <p>
-              We offer trips to: Palermo, Cefalù, Taormina, Catania, Eolie
-              Islands. Contact us for more informations and prices.
+              {language === "_eng"
+                ? "We offer trips to: Palermo, Cefalù, Taormina, Catania, Eolie Islands. Contact us for more informations and prices."
+                : "IN ITALIANO - We offer trips to: Palermo, Cefalù, Taormina, Catania, Eolie Islands. Contact us for more informations and prices. "}
             </p>
           </Col>
         </Row>
@@ -70,16 +75,20 @@ const DailyTours = (props) => {
           <Col className="col-12 px-0 flex-column flex-md-row d-flex justify-content-center">
             <Button
               child={
-                <a href="tel:0402112221" className="contact-button">
-                  <i className="fas fa-phone"></i> 0402112221
+                <a href="tel:00393801761005" className="contact-button">
+                  <i className="fas fa-phone"></i> 0039 380 176 1005
                 </a>
               }
               className="mb-3 mx-auto mx-md-3 my-md-0"
             />
             <Button
               child={
-                <a href="mailto:hello@aeolians.com" className="contact-button">
-                  <i className="far fa-envelope"></i> hello@aeolians.com
+                <a
+                  href="mailto:aeoliansholidayapartments@outlook.com"
+                  className="contact-button"
+                >
+                  <i className="far fa-envelope"></i>{" "}
+                  aeoliansholidayapartments@outlook.com
                 </a>
               }
               className="my-0 mx-auto mx-md-3 my-md-0"

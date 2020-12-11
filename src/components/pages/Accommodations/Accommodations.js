@@ -87,9 +87,11 @@ const Accommodations = ({ accommodations }) => {
     <div className="my-background">
       <Row className="mx-0">
         <PageTitle
-          title={"OUR ACCOMMODATIONS"}
+          title={
+            language === "_eng" ? `OUR ACCOMMODATIONS` : `I NOSTRI ALLOGGI`
+          }
           undertitle={
-            "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt "
+            language === "_eng" ? `English lorem ipsum` : `Lorem ipsum italiano`
           }
         ></PageTitle>
       </Row>
