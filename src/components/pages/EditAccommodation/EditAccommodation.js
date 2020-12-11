@@ -61,20 +61,20 @@ const EditAccommodation = (props) => {
 
   useEffect(() => {
     if (booking_logos && bookings) {
+      const newBookings = [...bookings];
       booking_logos.map((bookingService, index) => {
         const newBookingState = bookingState;
         const controller = bookings.some(
           (booking) => bookingService.logo === booking.logo
         );
         if (controller === false) {
-          const newBookings = [...bookings];
           newBookings.splice(index, 0, undefined);
-          setAccommodationDetails({
-            ...accommodationDetails,
-            bookings: newBookings,
-          });
         }
         newBookingState[index] = !controller;
+        setAccommodationDetails({
+          ...accommodationDetails,
+          bookings: newBookings,
+        });
         return setBookingState(newBookingState);
       });
     }
@@ -209,7 +209,6 @@ const EditAccommodation = (props) => {
             ...accommodationDetails,
             bookings: newLogosArray,
           });
-          console.log(bookings);
         } else {
           newLogosArray[index] = undefined;
           setAccommodationDetails({

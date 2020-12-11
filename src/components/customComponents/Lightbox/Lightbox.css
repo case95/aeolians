@@ -8,13 +8,29 @@
 
 .activate-lightbox {
   height: 100%;
+  position: relative;
 }
 
 .activate-lightbox::after {
-  background-color: lightcoral;
+  background-color: white;
   position: absolute;
+  opacity: 0;
+  display: flex; /* establish flex container */
+  flex-direction: column; /* make main axis vertical */
+  justify-content: center; /* center items vertically, in this case */
+  align-items: center; /* center items horizontally, in this case */
+  text-align: center;
+  font-size: 24px;
+  top: 0;
+  left: 0;
+  content: "Click for more photos.";
   height: 100%;
   width: 100%;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.activate-lightbox:hover::after {
+  opacity: 0.7;
 }
 
 .modal-dialog {

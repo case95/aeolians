@@ -29,13 +29,6 @@ const ManageAccommodations = ({ accommodations }) => {
       accommodations &&
       pics.slice(0, 3).map((pic, index) => {
         return (
-          // <li className="image-preview-container" key={index}>
-          //   <img
-          //     src={pic}
-          //     alt={`image preview-${index}`}
-          //     className="image-preview"
-          //   />
-          // </li>
           <div className="image-preview-container mx-1" key={index}>
             <img
               src={pics && pic}

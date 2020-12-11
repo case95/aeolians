@@ -203,6 +203,9 @@ const Header = ({ accommodations, firebase, auth }, logo) => {
   const loggedIn = () => {
     return (
       <Fragment>
+        <Nav.Link as={Link} to="/adminpanel" className="my-nav-link">
+          Admin Panel
+        </Nav.Link>
         <Nav.Link as={Link} to="/manageaccommodations" className="my-nav-link">
           Accommodations
         </Nav.Link>

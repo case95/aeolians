@@ -42,8 +42,8 @@ const Login = ({ firebase }) => {
         if (res.user) {
           setError("");
           setSuccess("You Are Logged In!");
-          await sleep(1000);
-          redirect.push("/manageaccommodations");
+          await sleep(500);
+          redirect.push("/adminpanel");
         }
       })
       .catch((e) => {

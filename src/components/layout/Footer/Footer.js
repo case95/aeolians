@@ -37,15 +37,21 @@ const Footer = ({ logo, emails }) => {
     setUserEmail({ email: e.target.value });
   };
 
+  const sleep = (milliseconds) => {
+    return new Promise((resolve) => setTimeout(resolve, milliseconds));
+  };
+
   const onSubmit = (e) => {
     e.preventDefault();
     firestore
       .collection("emails")
       .doc(`${userEmail.email}`)
       .set(userEmail)
-      .then(() => {
+      .then(async () => {
         setError("");
         setSuccess("You have succesfully Subscribed!");
+        await sleep(3000);
+        setSuccess("");
       })
       .catch((err) => {
         setSuccess("");
@@ -109,7 +115,7 @@ const Footer = ({ logo, emails }) => {
         </Col>
 
         <Col className="col-12 col-md-4 my-footer-col-3">
-          <p className="footer-title mb-0">
+          <p className="footer-title mb-0 text-md-left">
             {language === "_eng"
               ? `Subscribe to the Newsletter!`
               : `Iscriviti alla Newsletter!`}
@@ -135,8 +141,12 @@ const Footer = ({ logo, emails }) => {
               }
             ></Input>
           </Form>
-          {success && <p className="text-success text-center">{success}</p>}
-          {error && <p className="text-danger text-center">{error}</p>}
+          {success && (
+            <p className="text-success text-center text-md-left">{success}</p>
+          )}
+          {error && (
+            <p className="text-danger text-center text-md-left">{error}</p>
+          )}
         </Col>
       </Row>
       <Row className="mx-0">

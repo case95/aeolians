@@ -9,7 +9,7 @@
 .my-background {
   background-color: var(--my-light-gray);
   padding: 30px 30px;
-  min-height: calc(100vh - 128px - 81px);
+  min-height: calc(100vh - 92px - 103px - 25px);
 }
 
 .image-previewer {
@@ -24,12 +24,6 @@
 .image-previewer .image-preview-container-box {
   overflow: hidden;
   max-height: 200px;
-}
-
-@media (min-width: 992px) {
-  .image-previewer .image-preview-container-box {
-    max-height: 100%;
-  }
 }
 
 .image-previewer .image-preview-container .image-preview {
@@ -63,4 +57,8 @@
 
 .booking-icon {
   height: 100%;
+}
+
+.lightbox-button {
+  background-color: lightcoral;
 }

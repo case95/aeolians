@@ -12,7 +12,7 @@
   background-position: center;
   background-size: cover;
   padding: 30px 30px;
-  min-height: calc(100vh - 128px - 81px);
+  min-height: calc(100vh - 128px - 81px - 25px);
 }
 
 @media (min-width: 992px) {

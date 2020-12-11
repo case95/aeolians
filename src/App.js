@@ -12,6 +12,7 @@ import EditAccommodation from "./components/pages/EditAccommodation/EditAccommod
 import NotFound from "./components/pages/NotFound/NotFound";
 import Login from "./components/pages/Login/Login";
 import NewsletterPage from "./components/pages/NewsletterPage/NewsletterPage";
+import AdminPanel from "./components/pages/AdminPanel/AdminPanel";
 
 //Private Route
 import PrivateRoute from "./components/PrivateRoute";
@@ -57,6 +58,7 @@ function App() {
               <Route exact path="/tours" component={DailyTours} />
               <Route exact path="/contacts" component={ContactUs} />
               <Route exact path="/aeolians_admin" component={Login} />
+              <PrivateRoute exact path="/adminpanel" component={AdminPanel} />
               <PrivateRoute
                 exact
                 path="/manageaccommodations"

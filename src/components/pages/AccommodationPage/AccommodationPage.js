@@ -95,7 +95,7 @@ const AccommodationPage = (props) => {
                       return (
                         <li key={index} className="booking-method">
                           <a
-                            href={`http://${booking.link}`}
+                            href={` ${booking.link}`}
                             target="_blank"
                             className="booking-link"
                           >
