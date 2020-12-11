@@ -158,7 +158,7 @@ const AddAccommodation = (props) => {
         }
       } else {
         const newArray = [...pictureFiles];
-        newArray[index] = null;
+        newArray[index] = placeholderImage;
         setPictureFiles([...newArray]);
 
         const passArray = [...pictures];
@@ -268,6 +268,7 @@ const AddAccommodation = (props) => {
       // redirect user to the dashboard after adding a client.
       history.push("/manageaccommodations");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pictures]);
 
   const onSubmit = (e) => {
@@ -281,7 +282,9 @@ const AddAccommodation = (props) => {
       });
       setError("");
       setTrigger(true);
-    } else setError("Upload at least four images");
+    } else {
+      setError("Upload at least four images");
+    }
   };
 
   if (!accommodations || !booking_logos) {

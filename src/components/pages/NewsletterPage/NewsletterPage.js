@@ -18,6 +18,7 @@ const NewsletterPage = (props) => {
       newArray[index] = email.email;
       return setEmailList([...newArray]);
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

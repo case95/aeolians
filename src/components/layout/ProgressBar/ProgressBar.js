@@ -20,6 +20,7 @@ const ProgressBar = ({
 
       console.log("CHANGED PICS", pictures);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [url]);
 
   return (

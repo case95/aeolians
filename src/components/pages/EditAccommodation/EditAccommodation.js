@@ -36,6 +36,9 @@ const EditAccommodation = (props) => {
 
   const [accommodationDetails, setAccommodationDetails] = useState({});
 
+  const placeholderImage =
+    "https://firebasestorage.googleapis.com/v0/b/aeolians-86d4b.appspot.com/o/placeholder-image.png?alt=media&token=4bc0a867-22fa-4e42-9028-090de0543b08";
+
   useEffect(() => {
     return (
       accommodations &&
@@ -43,6 +46,7 @@ const EditAccommodation = (props) => {
         ...accommodations.find((obj) => obj.id === id),
       })
     );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [accommodations]);
 
   useFirestoreConnect([
@@ -78,6 +82,7 @@ const EditAccommodation = (props) => {
         return setBookingState(newBookingState);
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [booking_logos]);
 
   const [showDelete, setShowDelete] = useState(false);
@@ -98,8 +103,6 @@ const EditAccommodation = (props) => {
   };
 
   const types = ["image/jpg", "image/jpeg"];
-
-  const [errors, setErrors] = useState([""]);
 
   const [pictureFiles, setPictureFiles] = useState([]);
 
@@ -171,7 +174,7 @@ const EditAccommodation = (props) => {
           }
         } else {
           const newPicturesArray = [...pictures];
-          newPicturesArray[index] = null;
+          newPicturesArray[index] = placeholderImage;
           setAccommodationDetails({
             ...accommodationDetails,
             pictures: newPicturesArray,
@@ -217,13 +220,12 @@ const EditAccommodation = (props) => {
           });
         }
         break;
+      default:
+        break;
     }
   };
 
   const [trigger, setTrigger] = useState(false);
-  const onTrigger = () => {
-    setTrigger(true);
-  };
 
   useEffect(() => {
     if (trigger) {
@@ -243,6 +245,7 @@ const EditAccommodation = (props) => {
         }
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pictures]);
 
   const [cleanDetails, setCleanDetails] = useState({});
@@ -257,19 +260,28 @@ const EditAccommodation = (props) => {
         console.log("ERROR:", err);
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cleanDetails]);
+
+  const [errors, setErrors] = useState([""]);
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (pictures.includes(null)) {
+
+    if (pictures.includes(placeholderImage)) {
+      const newErrors = errors;
       pictures.map((picture, index) => {
-        if (picture === null) {
+        if (picture === placeholderImage) {
           setError("There are empty fields in Pictures.");
-          const newErrors = [...errors];
-          newErrors[index] = "Select an image.";
-          setErrors(newErrors);
+          return (newErrors[index] = "Select an image.");
+        } else {
+          return (newErrors[index] = "");
         }
       });
+
+      setErrors(newErrors);
+      console.log(errors);
+      return;
     } else {
       if (
         pictureFiles.length === 0 ||
@@ -280,6 +292,7 @@ const EditAccommodation = (props) => {
           ...accommodationDetails,
           bookings: newBookings,
         });
+        return;
       } else {
         const newBookings = bookings.filter((booking) => booking !== undefined);
         setAccommodationDetails({
@@ -288,6 +301,7 @@ const EditAccommodation = (props) => {
         });
         setError("");
         setTrigger(true);
+        return;
       }
     }
   };
@@ -302,7 +316,7 @@ const EditAccommodation = (props) => {
     if (Array.isArray(services) && value === "picture") {
       setAccommodationDetails({
         ...accommodationDetails,
-        pictures: [...pictures, ""],
+        pictures: [...pictures, placeholderImage],
       });
     }
     if (Array.isArray(bookings) && value === "booking") {

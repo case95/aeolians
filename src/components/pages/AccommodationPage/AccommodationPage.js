@@ -97,6 +97,7 @@ const AccommodationPage = (props) => {
                           <a
                             href={` ${booking.link}`}
                             target="_blank"
+                            rel="noopener noreferrer"
                             className="booking-link"
                           >
                             <img
