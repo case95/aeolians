@@ -33,9 +33,20 @@
   opacity: 0.7;
 }
 
+.modal {
+  padding: 0 !important;
+}
+
 .modal-dialog {
-  margin: 15px auto !important;
-  padding: 0 16px;
+  margin: 15px !important;
+  padding: 0;
+}
+
+@media (min-width: 930px) {
+  .modal-dialog {
+    margin: 15px auto !important;
+    padding: 0;
+  }
 }
 
 .modal-content {
@@ -43,33 +54,70 @@
 }
 
 .modal-body {
-  height: calc(100vh - 30px - 71px);
+  height: calc(100vh - 30px - 71px - 57px);
 }
 
 .modal-carousel-container {
   width: 100%;
-  height: calc(100vh - 30px - 71px - 32px);
+  height: calc(100vh - 30px - 71px - 32px - 57px);
 }
 
 .modal-carousel-inner {
-  height: calc(100vh - 30px - 71px - 32px);
+  height: calc(100vh - 30px - 71px - 32px - 57px);
 }
 
 .modal-carousel-image-container {
   width: 100%;
-  height: calc(100vh - 30px - 71px - 32px);
+  height: calc(100vh - 30px - 71px - 32px - 57px);
 }
 
 .modal-carousel-image {
   object-fit: cover !important;
   object-position: center !important;
   width: 100%;
-  min-height: calc(100vh - 30px - 71px - 32px);
+  min-height: calc(100vh - 30px - 71px - 32px - 57px);
   height: 100%;
 }
 
-.carousel-indicators li {
-  background-color: var(--my-blue) !important;
+@media (min-width: 576px) {
+  .modal-body {
+    height: calc(100vh - 30px - 71px);
+  }
+
+  .modal-carousel-container {
+    height: calc(100vh - 30px - 71px - 32px);
+  }
+
+  .modal-carousel-inner {
+    height: calc(100vh - 30px - 71px - 32px);
+  }
+
+  .modal-carousel-image-container {
+    height: calc(100vh - 30px - 71px - 32px);
+  }
+
+  .modal-carousel-image {
+    min-height: calc(100vh - 30px - 71px - 32px);
+  }
+}
+
+.modal-carousel-container .carousel-inner {
+  height: auto;
+}
+
+.modal-carousel-container .carousel-image-container {
+  height: 600px;
+  width: 100%;
+}
+.modal-carousel-container .carousel-image {
+  object-fit: cover !important;
+  object-position: center !important;
+  min-height: 600px;
+  width: 100%;
+}
+
+.modal-carousel-container .carousel-indicators li {
+  background-color: white !important;
 }
 @media (min-width: 576px) {
   .modal-dialog {

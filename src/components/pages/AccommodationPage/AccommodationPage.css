@@ -23,7 +23,7 @@
 
 .image-previewer .image-preview-container-box {
   overflow: hidden;
-  max-height: 200px;
+  height: 200px;
 }
 
 .image-previewer .image-preview-container .image-preview {
@@ -42,7 +42,9 @@
 
 .booking-sites {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 10px;
+  row-gap: 10px;
   list-style: none;
 }
 

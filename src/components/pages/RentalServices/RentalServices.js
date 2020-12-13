@@ -31,7 +31,7 @@ const RentalServices = (props) => {
               src={slide.picture}
               alt="First slide"
             />
-            <div className="carousel-band">
+            <div className="carousel-band d-none d-md-block">
               <Carousel.Caption>
                 <p>{slide.description[`description${language}`]}</p>
               </Carousel.Caption>

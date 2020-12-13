@@ -36,6 +36,10 @@ const Lightbox = ({ activate, accommodationDetails, language }) => {
         </div>
 
         <Modal show={show} onHide={handleClose} style={{ paddingRight: "0" }}>
+          <Modal.Header
+            closeButton
+            className="d-block d-sm-none"
+          ></Modal.Header>
           <Modal.Body>
             <Carousel interval={null} className="modal-carousel-container">
               {listSlides()}

@@ -102,6 +102,12 @@ const AccommodationPage = (props) => {
                           >
                             <img
                               src={booking.logo}
+                              onMouseOver={(e) =>
+                                (e.currentTarget.src = booking.logo_active)
+                              }
+                              onMouseOut={(e) =>
+                                (e.currentTarget.src = booking.logo)
+                              }
                               alt={`booking method ${index}`}
                               className="booking-icon"
                             />

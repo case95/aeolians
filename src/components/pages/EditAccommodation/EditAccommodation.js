@@ -206,6 +206,7 @@ const EditAccommodation = (props) => {
         if (e.target.checked) {
           newLogosArray[index] = {
             ...newLogosArray[index],
+            logo_active: booking_logos[index].logo_active,
             [e.target.name]: e.target.value,
           };
           setAccommodationDetails({
