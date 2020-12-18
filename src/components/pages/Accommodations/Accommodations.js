@@ -90,9 +90,6 @@ const Accommodations = ({ accommodations }) => {
           title={
             language === "_eng" ? `OUR ACCOMMODATIONS` : `I NOSTRI ALLOGGI`
           }
-          undertitle={
-            language === "_eng" ? `English lorem ipsum` : `Lorem ipsum italiano`
-          }
         ></PageTitle>
       </Row>
       <Row className="mx-0">{listAccommodations()}</Row>

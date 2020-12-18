@@ -35,14 +35,12 @@ const Home = () => {
             <div>
               <PageTitle
                 title={
-                  language === "_eng"
-                    ? "ENGLISH LOREM IPSUM"
-                    : "ITALIAN LOREM IPSUM"
+                  language === "_eng" ? "DISCOVER SICILY" : "SCOPRI LA SICILIA"
                 }
                 text={
                   language === "_eng"
                     ? "Aeolians Holiday Apartments was created to offer you the best apartments in northern Sicily for your every need. We carefully chose each apartment for its location and its amenities, all for a holiday of your dreams."
-                    : " A Capo d’Orlando,Tra gli splendidi scenari delle coste siciliane, immersi nel fascino delle bellezze naturali e culturali del territorio,Aeolians Holiday Apartments vi da la possibilità di trascorrere giorni indimenticabili nelle nostre meravigliose strutture."
+                    : "A Capo d’Orlando,tra gli splendidi scenari delle coste siciliane, immersi nel fascino delle bellezze naturali e culturali del territorio,Aeolians Holiday Apartments vi da la possibilità di trascorrere giorni indimenticabili nelle nostre meravigliose strutture."
                 }
               ></PageTitle>
               <Row>

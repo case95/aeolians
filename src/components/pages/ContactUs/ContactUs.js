@@ -11,12 +11,7 @@ const ContactUs = () => {
   return (
     <div className="my-background">
       <PageTitle
-        title={language === "_eng" ? "CONSTACT US" : "CONTATTACI"}
-        undertitle={
-          language === "_eng"
-            ? "ENGLISH - Lorem ipsum dolor sit"
-            : "ITALIAN - Lorem ipsum dolor sit"
-        }
+        title={language === "_eng" ? "CONTACT US" : "CONTATTACI"}
         text={
           language === "_eng"
             ? "ENGLISH - Mollit est occaecat dolor cillum eiusmod veniam non elit laborum duis irure cupidatat tempor dolore. Id labore anim Lorem duis amet incididunt ullamco enim non in eiusmod. Voluptate amet est quis velit cupidatat est Lorem culpa non aliqua reprehenderit nisi. Culpa reprehenderit ea occaecat reprehenderit do eu proident irure eiusmod elit enim fugiat consequat."

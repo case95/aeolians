@@ -67,7 +67,7 @@ const DailyTours = (props) => {
             <p>
               {language === "_eng"
                 ? "We offer trips to: Palermo, Cefalù, Taormina, Catania, Eolie Islands. Contact us for more informations and prices."
-                : "IN ITALIANO - We offer trips to: Palermo, Cefalù, Taormina, Catania, Eolie Islands. Contact us for more informations and prices. "}
+                : "Offriamo tours per: Palermo, Cefalù, Taormina, Catania, Isole Eolie. Contattaci per informazioni e prezzi. "}
             </p>
           </Col>
         </Row>
