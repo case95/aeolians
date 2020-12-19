@@ -13,13 +13,14 @@ const NewsletterPage = (props) => {
   const [emailList, setEmailList] = useState([""]);
 
   useEffect(() => {
-    emails.map((email, index) => {
-      const newArray = emailList;
-      newArray[index] = email.email;
-      return setEmailList([...newArray]);
-    });
+    emails &&
+      emails.map((email, index) => {
+        const newArray = emailList;
+        newArray[index] = email.email;
+        return setEmailList([...newArray]);
+      });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [emails]);
 
   return (
     <div className="my-background">
