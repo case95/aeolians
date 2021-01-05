@@ -10,6 +10,7 @@ import PageTitle from "../../customComponents/PageTitle/PageTitle";
 
 const NewsletterPage = (props) => {
   useFirestoreConnect([{ collection: "emails" }]);
+
   const { emails } = props;
 
   const [emailList, setEmailList] = useState([""]);

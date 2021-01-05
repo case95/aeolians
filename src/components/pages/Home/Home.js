@@ -57,7 +57,7 @@ const Home = () => {
                 <Col className="my-container-link-col my-container-link-col-2">
                   <Link to="/contacts" className="my-container-link my-auto">
                     {language === "_eng"
-                      ? "CONTACT US FOR MORE INFOS"
+                      ? "CONTACT US FOR MORE INFO"
                       : "CONTATTACI PER INFORMAZIONI"}
                   </Link>
                 </Col>

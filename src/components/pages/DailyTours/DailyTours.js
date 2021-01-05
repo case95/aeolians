@@ -49,8 +49,8 @@ const DailyTours = (props) => {
             title={language === "_eng" ? "DAILY TOURS" : "TOUR ORGANIZZATI"}
             undertitle={
               language === "_eng"
-                ? "English Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt "
-                : "Italiano Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt "
+                ? "Discover our beautiful Sicily , amazing daily tours to multiple location, we can provide a day true the Sicilian Beauty."
+                : "Scopri la stupenda Sicilia , tour giornalieri in differenti città siciliane, provvediamo a meravigliose giornate in giro per la nostra isola."
             }
           ></PageTitle>
         </Row>
@@ -67,7 +67,7 @@ const DailyTours = (props) => {
             <p>
               {language === "_eng"
                 ? "We offer trips to: Palermo, Cefalù, Taormina, Catania, Eolie Islands. Contact us for more informations and prices."
-                : "Offriamo tours per: Palermo, Cefalù, Taormina, Catania, Isole Eolie. Contattaci per informazioni e prezzi. "}
+                : "Offriamo tours per: Palermo, Cefalù, Taormina, Catania, Isole Eolie. Contattaci per informazioni e prezzi."}
             </p>
           </Col>
         </Row>

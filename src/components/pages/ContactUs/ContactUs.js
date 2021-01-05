@@ -14,8 +14,8 @@ const ContactUs = () => {
         title={language === "_eng" ? "CONTACT US" : "CONTATTACI"}
         text={
           language === "_eng"
-            ? "ENGLISH - Mollit est occaecat dolor cillum eiusmod veniam non elit laborum duis irure cupidatat tempor dolore. Id labore anim Lorem duis amet incididunt ullamco enim non in eiusmod. Voluptate amet est quis velit cupidatat est Lorem culpa non aliqua reprehenderit nisi. Culpa reprehenderit ea occaecat reprehenderit do eu proident irure eiusmod elit enim fugiat consequat."
-            : "ITALIAN - Mollit est occaecat dolor cillum eiusmod veniam non elit laborum duis irure cupidatat tempor dolore. Id labore anim Lorem duis amet incididunt ullamco enim non in eiusmod. Voluptate amet est quis velit cupidatat est Lorem culpa non aliqua reprehenderit nisi. Culpa reprehenderit ea occaecat reprehenderit do eu proident irure eiusmod elit enim fugiat consequat."
+            ? "We provide holiday house service on the northern coast of Sicily , in the beautiful Capo d’Orlando. Our attention to details will provide you a superb holiday. The “Guest House” are managed from our professional staff. We are completely available for any information. Please contact us!"
+            : "Scegliete come trascorrere al meglio le vostre prossime vacanze, nella parte settentrionale della Sicilia , di fronte alle isole Eolie. Le strutture sono Gestite direttamente dal nostro personale qualificato, siamo a tua completa disposizione per eventuali informazioni. Contattaci!"
         }
       />
       <a href="tel:00393801761005" className="contact-link">

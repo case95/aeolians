@@ -31,11 +31,11 @@ const RentalServices = (props) => {
               src={slide.picture}
               alt="First slide"
             />
-            <div className="carousel-band d-none d-md-block">
+            {/* <div className="carousel-band d-none d-md-block">
               <Carousel.Caption>
                 <p>{slide.description[`description${language}`]}</p>
               </Carousel.Caption>
-            </div>
+            </div> */}
           </Carousel.Item>
         );
       })
@@ -53,8 +53,8 @@ const RentalServices = (props) => {
             }
             undertitle={
               language === "_eng"
-                ? "English Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt "
-                : "Italiano Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt "
+                ? "Come and discovery our beautiful cost from Capo d’Orlando Marina, we provide daily boat trip."
+                : "Vieni a visitare la bellezza della nostra costa da Capo d’Orlando Marina, forniamo escursioni giornaliere."
             }
           ></PageTitle>
         </Row>
@@ -71,7 +71,7 @@ const RentalServices = (props) => {
             <p>
               {language === "_eng"
                 ? "We renting lovely boat to our guest for experience and discovery  the wonderful Aeolians Island and the north coast of Sicily,daily trip to Vulcano e Lipari and on request to other islands. From the new and beautiful Capo d’Orlando Marina, only takes 40 minutes to get in Vulcano o Lipari."
-                : "IN ITALIANO:We renting lovely boat to our guest for experience and discovery  the wonderful Aeolians Island and the north coast of Sicily,daily trip to Vulcano e Lipari and on request to other islands. From the new and beautiful Capo d’Orlando Marina, only takes 40 minutes to get in Vulcano o Lipari."}
+                : "Proponiamo  per i nostri clienti escursioni giornaliere alle Meravigliosa isole Eolie, vulcano e Lipari , su richieste anche visite alle altre isole dell ‘Arcipelago Eoliano. Dal bellissimo porto di Capo d’Orlando Marina si impiega 40 minuti per arrivare a destinazione"}
             </p>
           </Col>
         </Row>

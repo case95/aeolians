@@ -105,7 +105,11 @@ const Footer = ({ logo, emails }) => {
             {language === "_eng" ? `Follow Us on:` : `Seguici Su:`}
           </p>
           <div className="icons-social">
-            <a href="www.instagram.com">
+            <a
+              href={` https://www.instagram.com/aeolians_holiday_apartments/`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="fab fa-instagram mr-3"></i>
             </a>
             <a href="www.facebook.com">
