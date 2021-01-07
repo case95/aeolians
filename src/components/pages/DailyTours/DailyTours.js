@@ -29,12 +29,11 @@ const DailyTours = (props) => {
             src={slide.picture}
             alt="First slide"
           />
-          <div className="carousel-band">
+          {/* <div className="carousel-band">
             <Carousel.Caption>
-              {/*<h3>First slide label</h3>*/}
               <p>{slide.description[`description${language}`]}</p>
             </Carousel.Caption>
-          </div>
+          </div> */}
         </Carousel.Item>
       );
     });
@@ -56,6 +55,7 @@ const DailyTours = (props) => {
         </Row>
         <Row className="mx-0">
           <Container
+            className="slider"
             styleNumber={1}
             child={
               <Carousel className="carousel-container">{listSlides()}</Carousel>

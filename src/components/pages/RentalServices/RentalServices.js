@@ -60,6 +60,7 @@ const RentalServices = (props) => {
         </Row>
         <Row className="mx-0">
           <Container
+            className="slider"
             styleNumber={1}
             child={
               <Carousel className="carousel-container">{listSlides()}</Carousel>

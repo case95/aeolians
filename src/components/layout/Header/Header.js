@@ -57,9 +57,9 @@ const Header = ({ accommodations, firebase, auth }, logo) => {
     return navAccommodations.map((accommodation, index) => {
       const { id, name } = accommodation;
       return (
-        <Fragment>
+        <Fragment key={`dropdown-fragment-item-${index}-lg`}>
           <Nav.Link
-            key={`dropdown-itaem-${index}-lg`}
+            key={`dropdown-item-${index}-lg`}
             as={Link}
             to={`/accommodations/${id}`}
             className="my-nav-link"
