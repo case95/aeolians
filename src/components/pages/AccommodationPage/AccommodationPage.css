@@ -21,6 +21,17 @@
   height: 100%;
 }
 
+@media screen and (min-width: 992px) {
+  .image-previewer {
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 0;
+    height: 0%;
+  }
+}
+
 .image-previewer .image-preview-container-box {
   overflow: hidden;
   height: 200px;
