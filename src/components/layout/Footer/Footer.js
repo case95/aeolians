@@ -112,7 +112,7 @@ const Footer = ({ logo, emails }) => {
             >
               <i className="fab fa-instagram mr-3"></i>
             </a>
-            <a href="www.facebook.com">
+            <a href="www.facebook.com/pg/aeoliansholidayapartments/about/">
               <i className="fab fa-facebook-square"></i>
             </a>
           </div>
